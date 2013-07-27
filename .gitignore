@@ -1,0 +1,10 @@
+*.pyc
+db/*
+migrations/*
+media/*
+Thumbs.db
+*.DS_Store
+*.*~
+.project
+.pydevproject
+.settings/*
