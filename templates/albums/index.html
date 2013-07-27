@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load image_tags %}
+
+{% block sidebar %}
+	<h3>Bibliothèque</h3>
+	<ul class="breadcrumb">
+		{% for album in albums_list %}
+			<li><a href="/albums/{{ album.id }}/">{{ album.name }}</a>
+		{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block content %}
+
+<h1>Liste des albums</h1>
+{% if albums_list %}
+	<ul class="thumbnails">
+	{% for album in albums_list %}
+		<li class="span3">
+				<a href="/albums/{{album.id}}/" class="thumbnail"><img src="{{ album.illustration|crop }}" alt="{{album.name}}"/></a>
+		</li>		
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>Aucun album n'est disponible actuellement.</p>
+{% endif%}
+{% endblock %}

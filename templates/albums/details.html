@@ -1,0 +1,38 @@
+{% extends "albums/index.html" %}
+
+{% load image_tags %}
+
+{% block content %}
+
+<ul class="breadcrumb">
+	<li>
+		<a href="/">Home</a>
+	</li>
+	<li>
+		<a href="/albums">Bibliothèque</a>
+	</li>
+	{% for crumb in album.parentbreadcrumb %}
+		<li><a href="/albums/{{ crumb.id }}">{{crumb.name}}</a></li>
+	{% endfor %}
+	<li class="active">
+		<a href="/albums/{{album.id}}">{{ album.name }}</a>
+	</li>
+</ul>
+<ul>
+{% for child in album.album_set.all %}
+	<li><a href="/albums/{{child.id}}">{{child.name}}</a></li>
+{% endfor %}
+</ul>
+<p>{{album.description}}</p>
+<ul class="thumbnails">
+	{% for picture in album.picture_set.all %}
+		<li class="span3">
+			<div class="thumbnail">
+				<a href="#" class="thumbnail">
+					<img src="{{picture.picture|crop}}" alt=""/>
+				</a>
+			</div>
+		</li>
+	{% endfor %}
+</ul>
+{% endblock %}

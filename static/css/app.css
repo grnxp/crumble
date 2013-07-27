@@ -1,0 +1,27 @@
+body
+{
+	background-color: #d0d0d0;
+}
+
+ul.breadcrumb
+{
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(227, 227, 227);
+}
+
+ul.breadcrumb li
+{
+    display: inline;
+}
+
+ul.breadcrumb li:after
+{
+    content: " » ";
+}
+
+ul.breadcrumb li:last-child:after
+{
+    content: "";
+}

@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" media="all" />
+<script src="{{STATIC_URL}}js/jquery-1.8.3.min.js"></script>
+<title>{% block page_title %}Crumble Part I{% endblock %}</title>
+</head>
+<body>
+	<header></header>
+	<section id="main" class="container">{% block content %}{% endblock %}</section>
+	<footer>
+		<div class="footer-content"></div>
+	</footer>
+</body>
+</html>
